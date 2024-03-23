@@ -1,46 +1,193 @@
-<svg width="133" height="41" viewBox="0 0 133 41" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0 40.4215H2.122V15.1755L0 14.2822V40.4215Z" fill="currentColor"/>
-  <path d="M4.487 38.5874H6.61V17.0608L4.487 16.1675V38.5874Z" fill="currentColor"/>
-  <path d="M8.974 36.7625H11.096V18.9554L8.974 18.0605V36.7625Z" fill="currentColor"/>
-  <path d="M13.461 34.9283H15.585V20.8391L13.461 19.9458V34.9283Z" fill="currentColor"/>
-  <path d="M17.945 33.098H20.069V22.7282L17.945 21.835V33.098Z" fill="currentColor"/>
-  <path d="M22.433 31.2654H24.557V24.6135L22.433 23.7202V31.2654Z" fill="currentColor"/>
-  <path d="M26.917 29.4405H29.041V26.5081L26.917 25.6133V29.4405Z" fill="currentColor"/>
-  <path d="M0 11.3486V14.2811L2.122 15.1743V11.3486H0Z" fill="url(#a)"/>
-  <path d="M4.487 9.5146V16.1665L6.61 17.0598V9.5146H4.487Z" fill="url(#b)"/>
-  <path d="M8.974 7.6885V18.0583L11.096 18.9531V7.6885H8.974Z" fill="url(#c)"/>
-  <path d="M13.461 5.8584V19.9476L15.585 20.8409V5.8584H13.461Z" fill="url(#d)"/>
-  <path d="M17.945 4.0278V21.8365L20.069 22.7298V4.0278H17.945Z" fill="url(#e)"/>
-  <path d="M22.433 2.1977V23.7243L24.557 24.6176V2.1977H22.433Z" fill="url(#f)"/>
-  <path d="M26.917 0.3677V25.6122L29.041 26.507V0.3677H26.917Z" fill="url(#g)"/>
-  <defs>
-    <linearGradient id="a" x1="-0.445" y1="27.098" x2="2.041" y2="4.25" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-    <linearGradient id="b" x1="3.993" y1="27.579" x2="6.48" y2="4.729" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-    <linearGradient id="c" x1="8.43" y1="28.065" x2="10.917" y2="5.217" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-    <linearGradient id="d" x1="12.868" y1="28.548" x2="15.355" y2="5.698" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-    <linearGradient id="e" x1="17.305" y1="29.031" x2="19.79" y2="6.182" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-    <linearGradient id="f" x1="21.743" y1="29.514" x2="24.228" y2="6.664" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-    <linearGradient id="g" x1="26.178" y1="29.995" x2="28.664" y2="7.147" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--nav--gradient)"/>
-      <stop offset="1" stop-color="currentColor"/>
-    </linearGradient>
-  </defs>
-</svg>
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+*/
+
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link,
+
+{
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+/* Apply "..." after 5 lines of text */
+.text-style-5lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 4 lines of text */
+.text-style-4lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex !important;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+ 
+.margin-0 {
+  margin: 0rem !important;
+}
+  
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+
+.text-wrap-balance	{
+text-wrap: balance;
+}
+
+.brand-logo-embed	{
+mix-blend-mode: exclusion;
+}
+
+.splide__slide.is-active .slider-title-wrap	{
+opacity:0;
+pointer-events:none;
+}
+
+.splide__slide.is-active .slider-description	{
+opacity:1;
+display:flex;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+    opacity: 0.4;
+}
+
+@media screen and (max-width: 991px) {
+.bottom-border-5px	{
+width: calc(100% - 64px) !important;
+}
+}
+
+
+
+/*.splide__slide .autoplay_bar {
+  width: 0%;
+  height: 100%;
+  transition-property: width;
+  transition-duration: 0ms;
+  transition-timing-function: linear;
+}
+
+.splide__slide.is-active .autoplay_bar {
+  width: 100%;
+  height: 100%;
+  transition-property: width;
+  transition-duration: 4000ms;
+  transition-timing-function: linear;
+}
+
+.splide__slide.is-active .autoplay_component {
+  opacity: 1 !important;
+}
+*/
+
+.autoplay_bar {
+  width: 0%;
+  height: 100%;
+  transition-property: width;
+  transition-duration: 4000ms;
+  transition-timing-function: linear;
+}
+
+.phil_text	{
+mix-blend-mode: exclusion;
+}
+
+[data-theme="dark"]	{
+	--nav--color: #000000 !important;
+  --nav--gradient: #ffffff !important;
+}
